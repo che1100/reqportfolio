@@ -1,0 +1,147 @@
+.portfolio-section {
+  height: 100vh;
+  padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 3vw, 2rem);
+  background: linear-gradient(135deg, #f0e6d6 0%, #e5d6c2 100%);
+  color: #3d2b1f;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgwLDAsMCwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+  opacity: 0.3;
+}
+
+.portfolio-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+  font-weight: 700;
+  color: #3d2b1f;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease-out;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  max-width: min(1200px, 90%);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 0.5rem; /* Prevents card shadow clipping */
+}
+
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures equal height cards */
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image {
+  width: 100%;
+  height: clamp(200px, 30vw, 250px);
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-content {
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  flex-grow: 1; /* Makes content fill remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-content h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  margin-bottom: 0.5rem;
+  color: #8b5a2b;
+}
+
+.portfolio-content p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  color: #3d2b1f;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  flex-grow: 1; /* Pushes any potential buttons to bottom */
+}
+
+/* Animation delays for cards */
+.portfolio-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.portfolio-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.portfolio-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Reuse animations from home section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Special tablet layout for 2 cards */
+@media (min-width: 600px) and (max-width: 899px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .portfolio-card:last-child:nth-child(odd) {
+    grid-column: span 2;
+    max-width: min(500px, 80%);
+    margin: 0 auto;
+  }
+}
+
+/* Mobile landscape orientation adjustment */
+@media (max-height: 500px) and (orientation: landscape) {
+  .portfolio-section {
+    padding: 2rem 1rem;
+  }
+  
+  .portfolio-image {
+    height: 150px;
+  }
+}
+
+/* High contrast mode for accessibility */
+@media (prefers-contrast: more) {
+  .portfolio-card {
+    background: #ffffff;
+    border: 2px solid #3d2b1f;
+  }
+  
+  .portfolio-content h3 {
+    color: #5c3a21;
+  }
+}

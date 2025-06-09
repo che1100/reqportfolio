@@ -1,0 +1,135 @@
+.home-section {
+  height: 100vh;
+  background: linear-gradient(135deg, #e5d6c2 0%, #d4b996 100%);
+  color: #0e0e0e;
+  display: flex;
+  flex-direction: column; /* Stack image and content vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  gap: 2rem; /* Add spacing between image and text */
+}
+
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgwLDAsMCwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+  opacity: 0.3;
+}
+
+
+.home__img {
+  z-index: 2;
+}
+
+.home__profile-pic {
+  width: auto;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.home-content h1,
+.home-content p {
+  color: #3d2b1f; /* Choose one: #333333, #2e1d0e, or #3d2b1f */
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+}
+
+.home-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  animation: fadeInUp 1s ease-out;
+}
+
+.home__title-color {
+  color: #8b5a2b;
+  display: inline-block;
+  min-width: 20ch; /* roughly equal to "Front-End Developer" */
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+.home-content p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Decorative Elements (Optional) */
+.decorative-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  top: -100px;
+  right: -100px;
+  z-index: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 3rem;
+  }
+  .home-content p {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 400px) {
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .home__profile-pic {
+    max-width: 150px;
+  }
+}
+
+}

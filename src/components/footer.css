@@ -1,0 +1,39 @@
+/* Footer.css */
+.portfolio-footer {
+  background: #3d2b1f;
+  color: #e5d6c2;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to bottom if using flex layout */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: #e5d6c2;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: #d4b996;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
