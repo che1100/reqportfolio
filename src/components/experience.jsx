@@ -19,7 +19,7 @@ const Experience = () => {
   };
 
   return (
-    <section className="ojt-section">
+    <section className="ojt-section" id="experience" >
       <div className="ojt-container">
         <div className="ojt-content">
           <h2 className="ojt-title">
@@ -44,7 +44,7 @@ const Experience = () => {
               
               <div className="ojt-description">
                 <h4 className="description-title">
-                  <FaTasks className="description-icon" /> Key Responsibilities:
+                  <FaTasks className="description-icon" /> Key Learnings and Experiences:
                 </h4>
                 <ul className="responsibilities-list">
                   {ojt.description.map((item, index) => (

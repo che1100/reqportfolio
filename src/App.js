@@ -5,7 +5,7 @@ import Home from './components/home';
 import CertificateCarousel from './components/cert';
 import AboutSection from './components/about';
 import PortfolioItems from './components/portfolio';
-import Experience from './components/experienceojt';
+import Experience from './components/experience';
 import Contact from './components/contact';
 import Footer from './components/footer';
 
